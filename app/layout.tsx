@@ -1,22 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import NavBar from "@/components/NavBar";
+import { Poppins } from "next/font/google";
+import "./globals.css"; // <-- This imports the Tailwind styles
+import NavBar from "../components/NavBar"; // <-- Adjust the path if your component is elsewhere
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description:
-    "A portfolio website showcasing my skills, experience, and projects.",
+  title: "Pawan Dake | Portfolio",
+  description: "Crafting exceptional digital experiences.",
 };
 
 export default function RootLayout({
@@ -25,12 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en">
+      <body
+        className={`${poppins.className} bg-[#030014] text-white antialiased min-h-screen flex flex-col`}
+      >
         <NavBar />
+        {/* Add padding top to account for the fixed navbar */}
+        <main className="flex-grow pt-24 px-6">{children}</main>
       </body>
     </html>
   );
