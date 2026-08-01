@@ -1,5 +1,6 @@
-this is readme file for my project 
+this is readme file for my project
 
 current to-do's:
-Want to make it moving like parallax and animated 
-adding timelines 
+-Want to make it moving like parallax and animated
+-adding timelines
+-feature of "no. of total views, people visited to site"
